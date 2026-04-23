@@ -10,6 +10,9 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f5f1e6;
     color: #1e3a5f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* HEADER */
@@ -119,9 +122,11 @@ body {
 /* MAIN */
 .main-content,
 .products-page {
+    flex: 1;
     max-width: 1000px;
     margin: auto;
     padding: 40px 20px;
+    width: 100%;
 }
 
 /* SECCIONES */
@@ -262,7 +267,7 @@ button:hover {
 
 /* FOOTER */
 .footer {
-    margin-top: 40px;
+    margin-top: auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
