@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jabones Exfoliantes & Detox - ViWa</title>
+    <title>Jabones Exfoliantes & Detox</title>
     <link rel="stylesheet" href="../styles/styles.css">
+
+   <!-- SEO -->
+<meta name="description" content="Jabones exfoliantes y detox ViWa elaborados artesanalmente para limpiar profundamente la piel, eliminando impurezas de forma natural.">
+<meta name="keywords" content="jabones exfoliantes, jabones detox, limpieza de la piel, cosmética natural, jabones artesanales ViWa">
+<meta name="author" content="Thiago Martínez">
+<meta name="robots" content="index, follow">
+
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jabones Exfoliantes y Detox - ViWa Atelier de Artesanías">
+<meta property="og:description" content="Descubrí los jabones exfoliantes y detox de ViWa: limpieza profunda y cuidado natural para tu piel.">
+<meta property="og:url" content="https://ttmartinez.github.io/ViWa/pages/exfoliantes.html">
+<meta property="og:image" content="https://raw.githubusercontent.com/TtMartinez/ViWa/main/assets/logos/LogoViWa.jpeg">
+<meta property="og:locale" content="es_AR">
 </head>
 <body>
 
     <nav class="main-nav">
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="../index.html" class="nav-link">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle">Nuestros Productos</a>
-                <ul class="dropdown-menu">
-                    <li><a href="./herbales.html">Jabones Herbales</a></li>
-                    <li><a href="./cremosos.html">Jabones Cremosos</a></li>
-                    <li><a href="./exfoliantes.html">Exfoliantes & Detox</a></li>
-                    <li><a href="./balsamos.html">Bálsamos</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a href="../index.html" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item dropdown" id="dropdown-productos">
+            <a class="nav-link dropdown-toggle" onclick="toggleDropdown()">
+                Nuestros Productos ▾
+            </a>
+            <ul class="dropdown-menu" id="dropdown-menu">
+                <li><a href="./herbales.html">Jabones Herbales</a></li>
+                <li><a href="./cremosos.html">Jabones Cremosos</a></li>
+                <li><a href="./exfoliantes.html">Exfoliantes & Detox</a></li>
+                <li><a href="./balsamos.html">Bálsamos</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
 
     <main class="products-page">
         <h1>Jabones Exfoliantes & Detox</h1>
@@ -41,6 +57,20 @@
         <button onclick="enviarWhatsApp()">Finalizar compra</button>
         <button onclick="cerrarCarrito()">Cerrar</button>
     </div>
+
+    <script>
+  function toggleDropdown() {
+    document.getElementById("dropdown-menu").classList.toggle("open");
+  }
+
+  // Cerrar si se clickea afuera
+  document.addEventListener("click", function(e) {
+    const dropdown = document.getElementById("dropdown-productos");
+    if (!dropdown.contains(e.target)) {
+      document.getElementById("dropdown-menu").classList.remove("open");
+    }
+  });
+</script>
 
     <script src="../js/productos.js"></script>
     <script src="../js/script.js"></script>

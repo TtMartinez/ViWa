@@ -58,6 +58,8 @@ async function cargarProductos() {
   } catch (error) {
     console.error("Error cargando productos:", error);
   }
+
+  
 }
 
 document.addEventListener("DOMContentLoaded", cargarProductos);

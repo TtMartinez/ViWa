@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="es-ar">
-<head>
+<<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ViWa</title>
+
     <link rel="stylesheet" href="./styles/styles.css">
+
+    <!-- SEO -->
+    <meta name="description" content="ViWa Atelier de Artesanías: jabones artesanales naturales hechos a mano. Líneas herbales, cremosas, exfoliantes, detox y bálsamos.">
+    <meta name="keywords" content="jabones artesanales, jabones naturales, cosmética natural, jabones herbales, exfoliantes, bálsamos, ViWa atelier">
+    <meta name="author" content="Thiago Martínez">
+    <meta name="robots" content="index, follow">
+
+    <!-- OPEN GRAPH (para redes sociales) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ViWa Atelier de Artesanías">
+    <meta property="og:description" content="Descubrí jabones naturales hechos a mano con ingredientes nobles. Cosmética consciente y artesanal.">
+    <meta property="og:url" content="https://ttmartinez.github.io/ViWa/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/TtMartinez/ViWa/main/assets/logos/LogoViWa.jpeg">
+
+    <!-- EXTRA (mejora preview en WhatsApp) -->
+    <meta property="og:locale" content="es_AR">
 </head>
 
 <body>
@@ -26,13 +42,13 @@
         <nav class="main-nav">
             <ul class="nav-list">
                 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" id="dropdown-productos">
 
-                    <a class="nav-link dropdown-toggle">
-                        Nuestros Productos
+                    <a class="nav-link dropdown-toggle" onclick="toggleDropdown()">
+                        Nuestros Productos ▾
                     </a>
 
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" id="dropdown-menu">
                         <li><a href="./pages/herbales.html">Jabones Herbales</a></li>
                         <li><a href="./pages/cremosos.html">Jabones Cremosos</a></li>
                         <li><a href="./pages/exfoliantes.html">Exfoliantes & Detox</a></li>
@@ -103,6 +119,19 @@
 
         </div>
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById("dropdown-menu").classList.toggle("open");
+        }
+
+        document.addEventListener("click", function(e) {
+            const dropdown = document.getElementById("dropdown-productos");
+            if (!dropdown.contains(e.target)) {
+                document.getElementById("dropdown-menu").classList.remove("open");
+            }
+        });
+    </script>
 
 </body>
 </html>
