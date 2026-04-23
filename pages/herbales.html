@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jabones Herbales - ViWa</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle">Nuestros Productos</a>
+                <ul class="dropdown-menu">
+                    <li><a href="./herbales.html">Jabones Herbales</a></li>
+                    <li><a href="./cremosos.html">Jabones Cremosos</a></li>
+                    <li><a href="./exfoliantes.html">Exfoliantes & Detox</a></li>
+                    <li><a href="./balsamos.html">Bálsamos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="products-page">
+        <h1>Jabones Herbales</h1>
+        <div class="products-grid" id="products-grid"></div>
+    </main>
+
+    <button class="ver-carrito" onclick="abrirCarrito()">
+        🛒 (<span id="contador-carrito">0</span>)
+    </button>
+
+    <div id="carrito-panel" class="compra-panel hidden">
+        <h2>Carrito</h2>
+        <div id="carrito-items"></div>
+        <p>Total: $<span id="carrito-total">0</span></p>
+        <button onclick="enviarWhatsApp()">Finalizar compra</button>
+        <button onclick="cerrarCarrito()">Cerrar</button>
+    </div>
+
+    <script src="../js/productos.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
