@@ -1,4 +1,6 @@
-<<head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -7,131 +9,233 @@
     <link rel="stylesheet" href="./styles/styles.css">
 
     <!-- SEO -->
-    <meta name="description" content="ViWa Atelier de Artesanías: jabones artesanales naturales hechos a mano. Líneas herbales, cremosas, exfoliantes, detox y bálsamos.">
+    <meta name="description" content="ViWa Atelier de Artesanías: jabones artesanales y cosmética natural hecha a mano. Bienestar consciente para el cuidado diario.">
     <meta name="keywords" content="jabones artesanales, jabones naturales, cosmética natural, jabones herbales, exfoliantes, bálsamos, ViWa atelier">
     <meta name="robots" content="index, follow">
 
-    <!-- OPEN GRAPH (para redes sociales) -->
+    <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="ViWa Atelier de Artesanías">
-    <meta property="og:description" content="Descubrí jabones naturales hechos a mano con ingredientes nobles. Cosmética consciente y artesanal.">
+    <meta property="og:description" content="Descubrí jabones y bálsamos artesanales hechos a mano. Cosmética consciente, natural y simple.">
     <meta property="og:url" content="https://ttmartinez.github.io/ViWa/">
     <meta property="og:image" content="https://raw.githubusercontent.com/TtMartinez/ViWa/main/assets/logos/LogoViWa.jpeg">
-
-    <!-- EXTRA (mejora preview en WhatsApp) -->
     <meta property="og:locale" content="es_AR">
 </head>
 
 <body>
-    <header class="main-header">
 
-        <div class="header-content">
-            
-            <a href="./index.html" class="logo-link">
-                <img src="./assets/logos/LogoViWa.jpeg" alt="Logo de Viwa" class="logo-img">
+<header class="main-header">
+
+    <div class="header-content">
+        
+        <a href="./index.html" class="logo-link">
+            <img src="./assets/logos/LogoViWa.jpeg" alt="Logo de ViWa" class="logo-img">
+        </a>
+
+        <div class="header-text">
+            <h1 class="header-title">ViWa · Atelier de Artesanías</h1>
+            <p>✨ Cosmética consciente, simple y natural</p>
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <ul class="nav-list">
+
+            <li class="nav-item dropdown" id="dropdown-productos">
+
+                <a class="nav-link dropdown-toggle" onclick="toggleDropdown()">
+                    Nuestros Productos ▾
+                </a>
+
+                <ul class="dropdown-menu" id="dropdown-menu">
+                    <li><a href="./pages/herbales.html">Jabones Herbales</a></li>
+                    <li><a href="./pages/cremosos.html">Jabones Cremosos</a></li>
+                    <li><a href="./pages/exfoliantes.html">Exfoliantes & Detox</a></li>
+                    <li><a href="./pages/balsamos.html">Bálsamos</a></li>
+                </ul>
+
+            </li>
+
+        </ul>
+    </nav>
+
+</header>
+
+<main class="main-content">
+
+    <section class="about-section">
+        <h2 class="section-title">🌿 ¿Qué es VIWA?</h2>
+
+        <p class="section-text">
+            VIWA es una marca de bienestar consciente que transforma lo cotidiano en rituales de cuidado.
+        </p>
+
+        <p class="section-text">
+            No se trata solo de productos, sino de experiencias:
+            volver a lo simple, a lo esencial y a esos pequeños momentos que nos conectan con el cuerpo, el hogar y nosotros mismos.
+        </p>
+
+        <p class="section-text">
+            Cada creación nace con una intención:
+            cuidar, acompañar y generar una pausa real en medio de la rutina.
+        </p>
+    </section>
+
+
+    <section class="about-section">
+        <h2 class="section-title">✨ Origen</h2>
+
+        <p class="section-text">
+            VIWA nace desde una búsqueda personal.
+        </p>
+
+        <p class="section-text">
+            Surge cuando el cuidado se vuelve urgente:
+            cuando la piel sensible de un bebé necesita algo más noble, puro y seguro.
+        </p>
+
+        <p class="section-text">
+            Lo que comenzó como una necesidad se transformó en un camino:
+            hacia lo natural, lo artesanal y una forma más consciente de crear.
+        </p>
+
+        <p class="section-text">
+            Así nace VIWA:
+            desde el amor, el cuidado y la elección de hacerlo diferente.
+        </p>
+    </section>
+
+
+    <section class="about-section">
+        <h2 class="section-title">💛 Propósito</h2>
+
+        <p class="section-text">
+            Crear momentos de pausa en la vida diaria a través de productos artesanales que invitan a volver a lo esencial.
+        </p>
+
+        <p class="section-text">
+            En VIWA creemos que el cuidado no debería ser automático, sino un ritual:
+            un instante para frenar, respirar y reconectar.
+        </p>
+
+        <p class="section-text">
+            No buscamos solo acompañar la piel,
+            sino también el bienestar.
+        </p>
+    </section>
+
+
+    <section class="about-section">
+        <h2 class="section-title">🛠️ Nuestra forma de trabajar</h2>
+
+        <p class="section-text">
+            Cada producto es elaborado artesanalmente, cuidando cada etapa del proceso.
+        </p>
+
+        <p class="section-text">
+            Seleccionamos ingredientes nobles, priorizando lo natural y lo seguro, especialmente para pieles sensibles.
+        </p>
+
+        <p class="section-text">
+            Trabajamos en pequeñas producciones, poniendo atención en cada detalle:
+            texturas, aromas, combinaciones y presentación.
+        </p>
+
+        <p class="section-text">
+            Nada es al azar.
+            Todo tiene una intención.
+        </p>
+
+        <p class="section-text">
+            Porque para nosotros, hacer no es solo producir:
+            es crear con sentido.
+        </p>
+    </section>
+
+
+    <section class="about-section">
+        <h2 class="section-title">🤍 Nuestra esencia</h2>
+
+        <p class="section-text">
+            VIWA es naturaleza, calma y presencia.
+        </p>
+
+        <p class="section-text">
+            Es elegir lo simple, pero bien hecho.
+            Es volver al origen.
+            Es transformar lo cotidiano en algo especial.
+        </p>
+
+        <p class="section-text">
+            Y sobre todo,
+            es cuidado real.
+        </p>
+
+        <p class="section-text">
+            Para vos.  
+            Para tu piel.  
+            Para quienes más amás.
+        </p>
+    </section>
+
+</main>
+
+
+<footer class="footer">
+    <div class="footer-content">
+
+        <div class="footer-text">
+            <p>© 2026 ViWa Atelier de Artesanías</p>
+            <p>Cosmética artesanal consciente</p>
+            <p>Todos los derechos reservados</p>
+
+            <p>
+                <a href="./pages/politica-de-privacidad.html"
+                   style="color:#f97316; font-size:0.85rem;">
+                    Política de Privacidad
+                </a>
+            </p>
+        </div>
+
+
+        <div class="footer-social">
+
+            <a href="https://www.instagram.com/viwa.atelierdeartesanias/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img src="./assets/logos/instagram.png"
+                     alt="Instagram"
+                     class="img">
             </a>
 
-            <div class="header-text">
-                <h1 class="header-title">ViWa - Atelier de Artesanias</h1>
-                <p>✨ Diseño consciente, simple y natural</p>
-            </div>
+            <a href="https://wa.me/5493462645379"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img src="./assets/logos/whatsapp.png"
+                     alt="WhatsApp"
+                     class="img">
+            </a>
 
         </div>
 
-        <nav class="main-nav">
-            <ul class="nav-list">
-                
-                <li class="nav-item dropdown" id="dropdown-productos">
+    </div>
+</footer>
 
-                    <a class="nav-link dropdown-toggle" onclick="toggleDropdown()">
-                        Nuestros Productos ▾
-                    </a>
 
-                    <ul class="dropdown-menu" id="dropdown-menu">
-                        <li><a href="./pages/herbales.html">Jabones Herbales</a></li>
-                        <li><a href="./pages/cremosos.html">Jabones Cremosos</a></li>
-                        <li><a href="./pages/exfoliantes.html">Exfoliantes & Detox</a></li>
-                        <li><a href="./pages/balsamos.html">Bálsamos</a></li>
-                    </ul>
+<script>
+function toggleDropdown() {
+    document.getElementById("dropdown-menu").classList.toggle("open");
+}
 
-                </li>
+document.addEventListener("click", function(e) {
+    const dropdown = document.getElementById("dropdown-productos");
 
-            </ul>
-        </nav>
-
-    </header>
-
-    <main class="main-content">
-
-        <section class="about-section">
-            <h2 class="section-title">El origen</h2>
-            <p class="section-text">
-                Vi Wa nació desde lo simple. Desde el deseo de crear con las manos, 
-                de volver al origen, de cuidar el cuerpo, el hogar y el alma con lo que la naturaleza nos ofrece.
-            </p>
-        </section>
-
-        <section class="about-section">
-            <h2 class="section-title">El propósito</h2>
-            <p class="section-text">
-                Cada pieza —un jabón, una vela, una tela— lleva un propósito: conectar con lo natural, 
-                recordarnos que lo esencial no se fabrica en serie, se siente.
-            </p>
-        </section>
-
-        <section class="about-section">
-            <h2 class="section-title">Nuestra forma de trabajar</h2>
-            <p class="section-text">
-                Trabajamos con ingredientes nobles, aromas puros y materiales que respetan el entorno. 
-                No seguimos tendencias: seguimos nuestra intuición. Creemos en lo imperfecto, en lo hecho con tiempo, 
-                en el poder de lo artesanal que sana y embellece.
-            </p>
-        </section>
-
-        <section class="about-section">
-            <h2 class="section-title">Qué es Vi Wa</h2>
-            <p class="section-text">
-                Vi Wa es más que una marca. Es un refugio para quienes eligen lo auténtico, 
-                lo consciente, lo hecho a mano.
-            </p>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-
-           <div class="footer-text">
-    <p>© 2026 ViWa Atelier de Artesanías</p>
-    <p>Todos los derechos reservados</p>
-    <p><a href="./pages/politica-de-privacidad.html" style="color: #f97316; font-size: 0.85rem;">Política de Privacidad</a></p>
-</div>
-
-            <div class="footer-social">
-                <a href="https://www.instagram.com/viwa.atelierdeartesanias/" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/logos/instagram.png" alt="Instagram" class="img">
-                </a>
-
-                <a href="https://wa.me/5493462645379" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/logos/whatsapp.png" alt="WhatsApp" class="img">
-                </a>
-            </div>
-
-        </div>
-    </footer>
-
-    <script>
-        function toggleDropdown() {
-            document.getElementById("dropdown-menu").classList.toggle("open");
-        }
-
-        document.addEventListener("click", function(e) {
-            const dropdown = document.getElementById("dropdown-productos");
-            if (!dropdown.contains(e.target)) {
-                document.getElementById("dropdown-menu").classList.remove("open");
-            }
-        });
-    </script>
+    if (!dropdown.contains(e.target)) {
+        document.getElementById("dropdown-menu").classList.remove("open");
+    }
+});
+</script>
 
 </body>
 </html>
