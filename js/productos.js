@@ -9,7 +9,7 @@ const CATEGORIAS = {
   "balsamos.html":    "balsamos",
   "gelducha.html":    "gelducha",
   "rituales.html":    "rituales",
-  "salesbaño.html":   "salesbaño",
+  "salesbanio.html":   "salesbaño",
   "textiles.html":    "textiles"
 };
 
