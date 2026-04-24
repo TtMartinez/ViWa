@@ -7,6 +7,10 @@ const CATEGORIAS = {
   "cremosos.html":    "cremosos",
   "exfoliantes.html": "exfoliantes",
   "balsamos.html":    "balsamos",
+  "gelducha.html":    "gelducha",
+  "rituales.html":    "rituales",
+  "salesbaño.html":   "salesbaño",
+  "textiles.html":    "textiles"
 };
 
 function sanityImgUrl(ref) {

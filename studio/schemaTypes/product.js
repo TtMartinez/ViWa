@@ -30,8 +30,12 @@ export default {
         list: [
           { title: 'Jabones Herbales',    value: 'herbales'    },
           { title: 'Jabones Cremosos',    value: 'cremosos'    },
-          { title: 'Exfoliantes & Detox', value: 'exfoliantes' },
-          { title: 'Bálsamos',            value: 'balsamos'    },
+          { title: 'Jabones Exfoliantes & Detox', value: 'exfoliantes' },
+          { title: 'Bálsamos & Exfoliantes',            value: 'balsamos'    },
+          { title: 'Gel de ducha',            value: 'gelducha'    },
+          { title: 'Rituales',            value: 'rituales'    },
+          { title: 'Sales de baño',            value: 'salesbaño'    },
+          { title: 'Textiles',            value: 'textiles'    },
         ]
       },
       validation: Rule => Rule.required()
