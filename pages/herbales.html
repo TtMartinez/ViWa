@@ -6,48 +6,63 @@
     <title>Jabones Herbales</title>
     <link rel="stylesheet" href="../styles/styles.css">
 
-  <!-- SEO -->
-<meta name="description" content="Jabones herbales ViWa elaborados artesanalmente con extractos naturales de plantas. Ideales para el cuidado diario de la piel de forma consciente.">
-<meta name="keywords" content="jabones herbales, jabones naturales, cosmética natural, plantas medicinales, jabones artesanales ViWa">
-<meta name="robots" content="index, follow">
+    <!-- SEO -->
+    <meta name="description" content="Jabones herbales ViWa elaborados artesanalmente con extractos naturales de plantas. Ideales para el cuidado diario de la piel de forma consciente.">
+    <meta name="keywords" content="jabones herbales, jabones naturales, cosmética natural, plantas medicinales, jabones artesanales ViWa">
+    <meta name="robots" content="index, follow">
 
-<!-- OPEN GRAPH -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jabones Herbales - ViWa Atelier de Artesanías">
-<meta property="og:description" content="Descubrí los jabones herbales de ViWa: hechos a mano con ingredientes naturales para una piel saludable.">
-<meta property="og:url" content="https://ttmartinez.github.io/ViWa/pages/herbales.html">
-<meta property="og:image" content="https://raw.githubusercontent.com/TtMartinez/ViWa/main/assets/logos/LogoViWa.jpeg">
-<meta property="og:locale" content="es_AR">
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jabones Herbales - ViWa Atelier de Artesanías">
+    <meta property="og:description" content="Descubrí los jabones herbales de ViWa: hechos a mano con ingredientes naturales para una piel saludable.">
+    <meta property="og:url" content="https://ttmartinez.github.io/ViWa/pages/herbales.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/TtMartinez/ViWa/main/assets/logos/LogoViWa.jpeg">
+    <meta property="og:locale" content="es_AR">
 </head>
 <body>
 
-   <nav class="main-nav">
-    <ul class="nav-list">
-        <li class="nav-item">
-            <a href="../index.html" class="nav-link">Inicio</a>
-        </li>
-        <li class="nav-item dropdown" id="dropdown-productos">
-            <a class="nav-link dropdown-toggle" onclick="toggleDropdown()">
-                Nuestros Productos ▾
-            </a>
-         <ul class="dropdown-menu" id="dropdown-menu">
-                <li><a href="./herbales.html">Jabones Herbales</a></li>
-                <li><a href="./cremosos.html">Jabones Cremosos</a></li>
-                <li><a href="./exfoliantes.html">Jabones Exfoliantes & Detox</a></li>
-                <li><a href="./balsamos.html">Bálsamos & Exfoliantes</a></li>
-                <li><a href="./gelducha.html">Gel de ducha</a></li>
-                <li><a href="./rituales.html">Rituales</a></li>
-                <li><a href="./salesbanio.html">Sales de baño</a></li>
-                <li><a href="./textiles.html">Textiles</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item dropdown" id="dropdown-productos">
+                <a class="nav-link dropdown-toggle" onclick="toggleDropdown()">
+                    Nuestros Productos ▾
+                </a>
+                <ul class="dropdown-menu" id="dropdown-menu">
+                    <li><a href="./herbales.html">Jabones Herbales</a></li>
+                    <li><a href="./cremosos.html">Jabones Cremosos</a></li>
+                    <li><a href="./exfoliantes.html">Jabones Exfoliantes & Detox</a></li>
+                    <li><a href="./balsamos.html">Bálsamos & Exfoliantes</a></li>
+                    <li><a href="./gelducha.html">Gel de ducha</a></li>
+                    <li><a href="./rituales.html">Rituales</a></li>
+                    <li><a href="./salesbanio.html">Sales de baño</a></li>
+                    <li><a href="./textiles.html">Textiles</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
     <main class="products-page">
         <h1>Jabones Herbales</h1>
         <div class="products-grid" id="products-grid"></div>
     </main>
+
+    <!-- MODAL PRODUCTO -->
+    <div id="producto-modal" class="modal-overlay hidden">
+        <div class="modal-contenido">
+            <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+            <img id="modal-img" src="" alt="Foto del producto" class="modal-img" />
+            <h2 id="modal-nombre"></h2>
+            <p id="modal-precio" class="modal-precio"></p>
+            <p class="modal-label">Descripción</p>
+            <p id="modal-descripcion" class="modal-texto"></p>
+            <p class="modal-label">Ingredientes</p>
+            <p id="modal-ingredientes" class="modal-texto"></p>
+            <button id="modal-btn-agregar">Agregar al carrito</button>
+        </div>
+    </div>
 
     <button class="ver-carrito" onclick="abrirCarrito()">
         🛒 (<span id="contador-carrito">0</span>)
@@ -61,46 +76,30 @@
         <button onclick="cerrarCarrito()">Cerrar</button>
     </div>
 
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>© 2026 ViWa Atelier de Artesanías</p>
+                <p>Todos los derechos reservados</p>
+                <p><a href="./politica-de-privacidad.html" style="color: #f97316; font-size: 0.85rem;">Política de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-  function toggleDropdown() {
-    document.getElementById("dropdown-menu").classList.toggle("open");
-  }
-
-  // Cerrar si se clickea afuera
-  document.addEventListener("click", function(e) {
-    const dropdown = document.getElementById("dropdown-productos");
-    if (!dropdown.contains(e.target)) {
-      document.getElementById("dropdown-menu").classList.remove("open");
-    }
-  });
-
-  <!-- MODAL PRODUCTO -->
-<div id="producto-modal" class="modal-overlay hidden">
-    <div class="modal-contenido">
-        <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
-        <img id="modal-img" src="" alt="Foto del producto" class="modal-img" />
-        <h2 id="modal-nombre"></h2>
-        <p id="modal-precio" class="modal-precio"></p>
-        <p class="modal-label">Descripción</p>
-        <p id="modal-descripcion" class="modal-texto"></p>
-        <p class="modal-label">Ingredientes</p>
-        <p id="modal-ingredientes" class="modal-texto"></p>
-        <button id="modal-btn-agregar">Agregar al carrito</button>
-    </div>
-</div>
-
-</script>
+        function toggleDropdown() {
+            document.getElementById("dropdown-menu").classList.toggle("open");
+        }
+        document.addEventListener("click", function(e) {
+            const dropdown = document.getElementById("dropdown-productos");
+            if (!dropdown.contains(e.target)) {
+                document.getElementById("dropdown-menu").classList.remove("open");
+            }
+        });
+    </script>
 
     <script src="../js/productos.js"></script>
     <script src="../js/script.js"></script>
+
 </body>
-
-<footer>
-    <div class="footer-text">
-    <p>© 2026 ViWa Atelier de Artesanías</p>
-    <p>Todos los derechos reservados</p>
-    <p><a href="./politica-de-privacidad.html" style="color: #f97316; font-size: 0.85rem;">Política de Privacidad</a></p>
-</div>
-</footer>
-
 </html>
