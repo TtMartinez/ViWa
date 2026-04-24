@@ -23,26 +23,31 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-  name: 'categoria',
-  title: 'Categoría',
-  type: 'string',
-  options: {
-    list: [
-      { title: 'Jabones Herbales',          value: 'herbales'    },
-      { title: 'Jabones Cremosos',          value: 'cremosos'    },
-      { title: 'Jabones Exfoliantes & Detox', value: 'exfoliantes' },
-      { title: 'Bálsamos & Exfoliantes',    value: 'balsamos'    },
-      { title: 'Textiles',                  value: 'textiles'    },
-      { title: 'Gel de Ducha',              value: 'gel'         },
-      { title: 'Rituales',                  value: 'rituales'    },
-      { title: 'Sales de Baño',             value: 'sales'       },
-    ]
-  },
-  validation: Rule => Rule.required()
-},
+      name: 'categoria',
+      title: 'Categoría',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Jabones Herbales',            value: 'herbales'    },
+          { title: 'Jabones Cremosos',            value: 'cremosos'    },
+          { title: 'Jabones Exfoliantes & Detox', value: 'exfoliantes' },
+          { title: 'Bálsamos & Exfoliantes',      value: 'balsamos'    },
+          { title: 'Textiles',                    value: 'textiles'    },
+          { title: 'Gel de Ducha',                value: 'gel'         },
+          { title: 'Rituales',                    value: 'rituales'    },
+          { title: 'Sales de Baño',               value: 'sales'       },
+        ]
+      },
+      validation: Rule => Rule.required()
+    },
     {
       name: 'descripcion',
       title: 'Descripción (opcional)',
+      type: 'text'
+    },
+    {
+      name: 'ingredientes',
+      title: 'Ingredientes (opcional)',
       type: 'text'
     }
   ]
