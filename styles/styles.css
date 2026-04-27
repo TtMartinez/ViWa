@@ -398,3 +398,11 @@ button:hover {
     background-color: #f5f1e6;
     cursor: pointer;
 }
+
+.subseccion {
+    text-align: center;
+}
+
+.subseccion .products-grid {
+    justify-content: center;
+}
