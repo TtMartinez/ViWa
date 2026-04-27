@@ -7,9 +7,9 @@ const CATEGORIAS = {
   "exfoliantes.html": "exfoliantes",
   "balsamos.html":    "balsamos",
   "textiles.html":    "textiles",
-  "gel.html":         "gel",
+  "gelducha.html":         "gel",
   "rituales.html":    "rituales",
-  "sales.html":       "sales",
+  "salesbanio.html":       "sales",
 };
 
 function sanityImgUrl(ref) {
