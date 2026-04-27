@@ -230,6 +230,7 @@ button:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
+     z-index: 999;
     background-color: #f97316;
     color: white;
     border: none;
@@ -382,5 +383,18 @@ button:hover {
 
 /* CARD CLICKEABLE */
 .product-card {
+    cursor: pointer;
+}
+
+/* SELECT SABORES */
+.modal-select {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    font-size: 0.95rem;
+    color: #1e3a5f;
+    background-color: #f5f1e6;
     cursor: pointer;
 }

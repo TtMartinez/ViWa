@@ -41,6 +41,18 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'subcategoria',
+      title: 'Subcategoría (solo para Bálsamos & Exfoliantes)',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Bálsamo Labial',   value: 'labial'      },
+          { title: 'Bálsamo Corporal', value: 'corporal'    },
+          { title: 'Exfoliantes',      value: 'exfoliantes' },
+        ]
+      }
+    },
+    {
       name: 'descripcion',
       title: 'Descripción (opcional)',
       type: 'text'
@@ -49,6 +61,21 @@ export default {
       name: 'ingredientes',
       title: 'Ingredientes (opcional)',
       type: 'text'
+    },
+    {
+      name: 'sabores',
+      title: 'Sabores / Variantes (solo para Bálsamos & Exfoliantes)',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'nombre',       title: 'Nombre del sabor', type: 'string' },
+            { name: 'descripcion',  title: 'Descripción',      type: 'text'   },
+            { name: 'ingredientes', title: 'Ingredientes',     type: 'text'   },
+          ]
+        }
+      ]
     }
   ]
 }
