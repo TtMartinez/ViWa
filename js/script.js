@@ -16,19 +16,19 @@ function guardarCarrito() {
 }
 
 /* Agregar */
-function agregarAlCarrito(nombre, precio) {
+function agregarAlCarrito(nombre, precio, cantidad = 1) {
     let prod = carrito.find(p => p.nombre === nombre);
 
     if (prod) {
-        prod.cantidad++;
+        prod.cantidad += cantidad;
     } else {
-        carrito.push({ nombre, precio: Number(precio), cantidad: 1 });
+        carrito.push({ nombre, precio: Number(precio), cantidad });
     }
 
     guardarCarrito();
     actualizarContador();
 
-    alert("Producto agregado al carrito");
+    alert(`${cantidad} producto(s) agregado(s) al carrito`);
 }
 
 /* Abrir */

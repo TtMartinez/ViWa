@@ -412,3 +412,32 @@ button:hover {
 .product-card{
     margin: 0 auto;
 }
+
+/* CANTIDAD EN MODAL */
+.modal-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0 10px;
+}
+
+.modal-cantidad button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-cantidad span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1e3a5f;
+    min-width: 30px;
+    text-align: center;
+}

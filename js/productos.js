@@ -7,9 +7,9 @@ const CATEGORIAS = {
   "exfoliantes.html": "exfoliantes",
   "balsamos.html":    "balsamos",
   "textiles.html":    "textiles",
-  "gelducha.html":         "gel",
+  "gelducha.html":    "gel",
   "rituales.html":    "rituales",
-  "salesbanio.html":       "sales",
+  "salesbanio.html":  "sales",
 };
 
 function sanityImgUrl(ref) {
@@ -19,6 +19,8 @@ function sanityImgUrl(ref) {
 }
 
 function abrirModal(nombre, precio, imgUrl, descripcion, ingredientes, sabores) {
+  // Resetear cantidad
+  document.getElementById("modal-cantidad-valor").innerText = "1";
   document.getElementById("modal-img").src            = imgUrl;
   document.getElementById("modal-nombre").innerText   = nombre;
   document.getElementById("modal-precio").innerText   = `$${precio.toLocaleString("es-AR")}`;
@@ -34,14 +36,12 @@ function abrirModal(nombre, precio, imgUrl, descripcion, ingredientes, sabores) 
       `<option value="${i}">${s.nombre}</option>`
     ).join("");
 
-    // Al cambiar sabor, actualizar descripción e ingredientes
     selectSabores.onchange = () => {
       const s = sabores[selectSabores.value];
       document.getElementById("modal-descripcion").innerText  = s.descripcion  || "Sin descripción.";
       document.getElementById("modal-ingredientes").innerText = s.ingredientes || "Sin especificar.";
     };
 
-    // Cargar el primer sabor al abrir
     const primero = sabores[0];
     document.getElementById("modal-descripcion").innerText  = primero.descripcion  || "Sin descripción.";
     document.getElementById("modal-ingredientes").innerText = primero.ingredientes || "Sin especificar.";
@@ -56,7 +56,8 @@ function abrirModal(nombre, precio, imgUrl, descripcion, ingredientes, sabores) 
     if (sabores && sabores.length > 0) {
       nombreFinal += ` - ${sabores[selectSabores.value].nombre}`;
     }
-    agregarAlCarrito(nombreFinal, precio);
+    const cantidad = parseInt(document.getElementById("modal-cantidad-valor").innerText);
+    agregarAlCarrito(nombreFinal, precio, cantidad);
     cerrarModal();
   };
 
@@ -67,23 +68,27 @@ function cerrarModal() {
   document.getElementById("producto-modal").classList.add("hidden");
 }
 
-function crearCard(prod) {
-  const imgUrl = sanityImgUrl(prod.imagen.asset._ref);
-  const saboresJSON = JSON.stringify(prod.sabores || []).replace(/'/g, "\\'");
+function cambiarCantidadModal(delta) {
+  const span = document.getElementById("modal-cantidad-valor");
+  const actual = parseInt(span.innerText);
+  const nuevo = actual + delta;
+  if (nuevo >= 1) span.innerText = nuevo;
+}
 
+function crearCard(prod) {
   const card = document.createElement("div");
   card.className = "product-card";
   card.onclick = () => abrirModal(
     prod.nombre,
     prod.precio,
-    imgUrl,
+    sanityImgUrl(prod.imagen.asset._ref),
     prod.descripcion || "",
     prod.ingredientes || "",
     prod.sabores || []
   );
 
   card.innerHTML = `
-    <img src="${imgUrl}" alt="${prod.nombre}" class="product-img">
+    <img src="${sanityImgUrl(prod.imagen.asset._ref)}" alt="${prod.nombre}" class="product-img">
     <h3>${prod.nombre}</h3>
     <p>$${prod.precio.toLocaleString("es-AR")}</p>
   `;
@@ -108,7 +113,6 @@ async function cargarProductos() {
     const { result } = await res.json();
 
     if (esBalsamos) {
-      // Limpiar los 3 grids
       ["labial", "corporal", "exfoliantes"].forEach(sub => {
         document.getElementById(`grid-${sub}`).innerHTML = "";
       });
@@ -119,7 +123,6 @@ async function cargarProductos() {
         grid.appendChild(crearCard(prod));
       });
 
-      // Mensaje si algún grid está vacío
       ["labial", "corporal", "exfoliantes"].forEach(sub => {
         const grid = document.getElementById(`grid-${sub}`);
         if (grid && grid.children.length === 0) {

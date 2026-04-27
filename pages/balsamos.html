@@ -63,25 +63,32 @@
     </main>
 
     <!-- MODAL PRODUCTO -->
-    <div id="producto-modal" class="modal-overlay hidden">
-        <div class="modal-contenido">
-            <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
-            <img id="modal-img" src="" alt="Foto del producto" class="modal-img" />
-            <h2 id="modal-nombre"></h2>
-            <p id="modal-precio" class="modal-precio"></p>
+<div id="producto-modal" class="modal-overlay hidden">
+    <div class="modal-contenido">
+        <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+        <img id="modal-img" src="" alt="Foto del producto" class="modal-img" />
+        <h2 id="modal-nombre"></h2>
+        <p id="modal-precio" class="modal-precio"></p>
 
-            <div id="modal-sabores-contenedor" class="hidden">
-                <p class="modal-label">Sabor / Variante</p>
-                <select id="modal-sabores-select" class="modal-select"></select>
-            </div>
-
-            <p class="modal-label">Descripción</p>
-            <p id="modal-descripcion" class="modal-texto"></p>
-            <p class="modal-label">Ingredientes</p>
-            <p id="modal-ingredientes" class="modal-texto"></p>
-            <button id="modal-btn-agregar">Agregar al carrito</button>
+        <div id="modal-sabores-contenedor" class="hidden">
+            <p class="modal-label">Sabor / Variante</p>
+            <select id="modal-sabores-select" class="modal-select"></select>
         </div>
+
+        <p class="modal-label">Descripción</p>
+        <p id="modal-descripcion" class="modal-texto"></p>
+        <p class="modal-label">Ingredientes</p>
+        <p id="modal-ingredientes" class="modal-texto"></p>
+
+        <div class="modal-cantidad">
+            <button onclick="cambiarCantidadModal(-1)">−</button>
+            <span id="modal-cantidad-valor">1</span>
+            <button onclick="cambiarCantidadModal(1)">+</button>
+        </div>
+
+        <button id="modal-btn-agregar">Agregar al carrito</button>
     </div>
+</div>
 
     <button class="ver-carrito" onclick="abrirCarrito()">
         🛒 (<span id="contador-carrito">0</span>)

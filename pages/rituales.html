@@ -66,6 +66,13 @@
         <p id="modal-descripcion" class="modal-texto"></p>
         <p class="modal-label">Ingredientes</p>
         <p id="modal-ingredientes" class="modal-texto"></p>
+
+        <div class="modal-cantidad">
+            <button onclick="cambiarCantidadModal(-1)">−</button>
+            <span id="modal-cantidad-valor">1</span>
+            <button onclick="cambiarCantidadModal(1)">+</button>
+        </div>
+
         <button id="modal-btn-agregar">Agregar al carrito</button>
     </div>
 </div>
