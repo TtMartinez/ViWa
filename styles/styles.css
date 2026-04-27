@@ -399,10 +399,16 @@ button:hover {
     cursor: pointer;
 }
 
-.subseccion {
+.subseccion{
     text-align: center;
 }
 
-.subseccion .products-grid {
-    justify-content: center;
+.subseccion .products-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.product-card{
+    margin: 0 auto;
 }
