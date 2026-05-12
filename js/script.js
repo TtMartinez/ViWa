@@ -92,13 +92,37 @@ function actualizarContador() {
     document.getElementById("contador-carrito").innerText = totalItems;
 }
 
-/* WhatsApp */
-function enviarWhatsApp() {
+/* Abrir modal de pago */
+function abrirModalPago() {
     if (carrito.length === 0) {
         alert("El carrito está vacío");
         return;
     }
+    document.getElementById("modal-pago").classList.remove("hidden");
+}
 
+/* Cerrar modal de pago */
+function cerrarModalPago() {
+    document.getElementById("modal-pago").classList.add("hidden");
+    document.querySelectorAll('input[name="pago"]').forEach(r => r.checked = false);
+}
+
+/* Confirmar pago */
+function confirmarPago() {
+    let seleccion = document.querySelector('input[name="pago"]:checked');
+
+    if (!seleccion) {
+        alert("Por favor seleccioná un método de pago");
+        return;
+    }
+
+    let metodoPago = seleccion.value;
+    cerrarModalPago();
+    enviarWhatsApp(metodoPago);
+}
+
+/* WhatsApp */
+function enviarWhatsApp(metodoPago) {
     let mensaje = "Hola! Quiero comprar:\n\n";
 
     carrito.forEach(prod => {
@@ -109,15 +133,27 @@ function enviarWhatsApp() {
     let total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
 
     mensaje += `\nTotal: $${formatearPrecioWA(total)}`;
+    mensaje += `\nForma de pago: ${metodoPago}`;
 
-    let telefono = "5493462645379";
-
-    let url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-
+    let url = `https://wa.me/5493462645379?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 }
 
-/* Inicial */
+/* Inicial — inyecta el modal en el DOM */
 document.addEventListener("DOMContentLoaded", () => {
+    document.body.insertAdjacentHTML("beforeend", `
+        <div id="modal-pago" class="hidden">
+            <div id="modal-pago-contenido">
+                <h3>¿Cómo vas a pagar?</h3>
+                <label><input type="radio" name="pago" value="Transferencia"> Transferencia</label>
+                <label><input type="radio" name="pago" value="Efectivo"> Efectivo</label>
+                <div>
+                    <button onclick="confirmarPago()">Confirmar</button>
+                    <button onclick="cerrarModalPago()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    `);
+
     actualizarContador();
 });
