@@ -15,6 +15,17 @@ function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
+/* Toast */
+function mostrarToast(mensaje) {
+    let toast = document.getElementById("toast");
+    toast.innerText = mensaje;
+    toast.classList.remove("hidden");
+
+    setTimeout(() => {
+        toast.classList.add("hidden");
+    }, 2500);
+}
+
 /* Agregar */
 function agregarAlCarrito(nombre, precio, cantidad = 1) {
     let prod = carrito.find(p => p.nombre === nombre);
@@ -27,8 +38,7 @@ function agregarAlCarrito(nombre, precio, cantidad = 1) {
 
     guardarCarrito();
     actualizarContador();
-
-    alert(`${cantidad} producto(s) agregado(s) al carrito`);
+    mostrarToast("✓ Producto agregado al carrito");
 }
 
 /* Abrir */
@@ -95,7 +105,7 @@ function actualizarContador() {
 /* Abrir modal de pago */
 function abrirModalPago() {
     if (carrito.length === 0) {
-        alert("El carrito está vacío");
+        mostrarToast("⚠️ El carrito está vacío");
         return;
     }
     document.getElementById("modal-pago").classList.remove("hidden");
@@ -112,7 +122,7 @@ function confirmarPago() {
     let seleccion = document.querySelector('input[name="pago"]:checked');
 
     if (!seleccion) {
-        alert("Por favor seleccioná un método de pago");
+        mostrarToast("⚠️ Por favor seleccioná un método de pago");
         return;
     }
 
@@ -139,7 +149,7 @@ function enviarWhatsApp(metodoPago) {
     window.open(url, "_blank");
 }
 
-/* Inicial — inyecta el modal en el DOM */
+/* Inicial — inyecta el modal y el toast en el DOM */
 document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML("beforeend", `
         <div id="modal-pago" class="hidden">
@@ -153,6 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
         </div>
+
+        <div id="toast" class="hidden"></div>
     `);
 
     actualizarContador();
